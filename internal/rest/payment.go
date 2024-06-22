@@ -16,8 +16,8 @@ func PaymentHandler() paymentHandler {
 }
 
 func (ph paymentHandler) Pay() func(c echo.Context) error {
-	req := payment.PaymentRequest{}
-	_, err := ph.paymentService.ProcessPayment(req)
+	req := payment.CreatePaymentRequest{}
+	_, err := ph.paymentService.CreatePayment(req)
 	if err != nil {
 		return nil
 	}

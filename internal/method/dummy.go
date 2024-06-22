@@ -1,14 +1,12 @@
 package method
 
-import "go-payment-gateway/payment"
-
 type dummy struct {
 }
 
-func DummyStrategy() payment.PaymentStrategy {
+func DummyStrategy() *dummy {
 	return &dummy{}
 }
 
-func (d *dummy) Pay(request payment.PaymentRequest) (payment.PaymentResponse, error) {
-	return payment.PaymentResponse{}, nil
+func (d *dummy) ProcessPayment(request ProcessPaymentRequest) (ProcessPaymentResponse, error) {
+	return ProcessPaymentResponse{}, nil
 }

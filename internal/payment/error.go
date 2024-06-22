@@ -1,5 +1,5 @@
 package payment
 
 const (
-	ErrUnknownPaymentMethod = "UNSUPPORTED PAYMENT METHOD %s"
+	ErrFailedProcessPayment = "ERROR WHILE PROCESSING PAYMENT %s, %s"
 )

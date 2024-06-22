@@ -2,8 +2,8 @@ package payment
 
 type (
 
-	// PaymentRequest represents a payment request from the client.
-	PaymentRequest struct {
+	// CreatePaymentRequest represents a create payment request from the client.
+	CreatePaymentRequest struct {
 		Amount        float64
 		Currency      string
 		PaymentType   string // CreditCard, BankTransfer, etc.
