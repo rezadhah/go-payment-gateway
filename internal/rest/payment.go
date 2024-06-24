@@ -2,6 +2,7 @@ package rest
 
 import (
 	"go-payment-gateway/internal/payment"
+	"net/http"
 
 	"github.com/labstack/echo/v4"
 )
@@ -15,13 +16,12 @@ func PaymentHandler() paymentHandler {
 	return paymentHandler{paymentService: svc}
 }
 
-func (ph paymentHandler) Pay() func(c echo.Context) error {
+func (ph paymentHandler) Pay(c echo.Context) error {
 	req := payment.CreatePaymentRequest{}
-	_, err := ph.paymentService.CreatePayment(req)
+	resp, err := ph.paymentService.CreatePayment(req)
 	if err != nil {
 		return nil
 	}
 
-	// return c.JSON(http.StatusOK, resp)
-	return nil
+	return c.JSON(http.StatusOK, resp)
 }
