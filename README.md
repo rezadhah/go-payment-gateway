@@ -1,3 +1,6 @@
 # go-payment-gateway
 
-TBD
+# How to run
+```bash
+$ docker-compose up
+```
